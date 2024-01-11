@@ -1,4 +1,4 @@
-/*import React from 'react'
+import React, { useState } from 'react'
 import Navigation from '../../components/Navigation/Navigation'
 import FooterSimple from '../../components/FooterSimple/FooterSimple'
 import { Button, Form, Input, InputNumber } from 'antd';
@@ -15,7 +15,16 @@ const layout = {
   },
 };
 function AddBook() {
+const endpoint=""
 
+const [body, setBody] = useState({
+  author: "",
+  title: "",
+  ISBN: "",
+  numberOfCopies:0,
+
+
+});
     const onFinish = (values) => {
         console.log(values);
       };
@@ -26,7 +35,7 @@ function AddBook() {
         await axios
           .post(endpoint, body)
           .then((res) => {
-            console.log({ data });
+            console.log(res );
             toast(res?.data, { position: toast.topRight });
           })
           .catch((err) => {
@@ -106,4 +115,4 @@ function AddBook() {
   )
 }
 
-export default AddBook*/
+export default AddBook
