@@ -25,9 +25,9 @@ function Home() {
           create an account or login</p>
           
           </div>
-          <div style={{display:'flex',flexDirection:"row", justifyContent:'space-between',
+          <div style={{display:'flex',flexDirection:"row", justifyContent:'space-evenly',
            width:'100%', height: "200px"}}>
-       <Link to="/Login"><Carte title="Log in" img="../assets/login.png"/></Link> 
+       <Link to="/Login"><Carte title="Log in" img="../assets/login icon.png"/></Link> 
         <Link to="/SignUp"><Carte title="Sign Up" img="../assets/sign-up.png"/></Link>
           </div>
         </div>

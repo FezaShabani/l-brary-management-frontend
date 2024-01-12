@@ -69,7 +69,7 @@ function AllStudent() {
       <Navigation />
       <div>
         <div>
-          <h4> Students with account</h4>
+          <h1 style={{textAlign: 'center'}}> Students with account</h1>
         </div>
 
         <Table

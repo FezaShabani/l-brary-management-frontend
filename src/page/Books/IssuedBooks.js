@@ -7,7 +7,7 @@ function IssuedBooks() {
     <div>
         <Navigation/>
         <div>
-            <h2>Issued Books</h2>
+            <h1 style={{textAlign:'center'}}>Issued Books</h1>
         </div>
         <FooterSimple/>
     </div>

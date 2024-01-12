@@ -6,7 +6,6 @@ import { FaUserCircle } from "react-icons/fa";
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-//css
 
 const formItemLayout = {
   labelCol: {

@@ -41,7 +41,7 @@ function Books() {
     <div>
     <Navigation/>
     <div>
-        <h4> Availaible Books</h4>
+        <h1 style={{textAlign:'center'}}> Availaible Books</h1>
     </div>
     <div>
     <Table dataSource={myBook} columns={columns} />
