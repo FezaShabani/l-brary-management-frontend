@@ -10,7 +10,7 @@ import Admin from './page/Admin/Admin';
 import AddBook from './page/AddBook/AddBook';
 import IssueBook from './page/Books/IssueBook';
 import AllStudent from './page/Student/AllStudent';
-import IssuedBooks from './page/Books/IssuedBooks';
+
 
 function App() {
   return (
@@ -25,11 +25,13 @@ function App() {
           <Route path="/Admin/AddBook" element={<AddBook />} />
           <Route path="/Admin/IssueBook" element={<IssueBook />} />
           <Route path="/Admin/AllStudent" element={<AllStudent />} />
-          <Route path="/Admin/IssuedBooks" element={<IssuedBooks />} />
+         
 
 
         </Routes>
+     
       </BrowserRouter>
+      
   );
 }
 

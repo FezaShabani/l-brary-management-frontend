@@ -18,11 +18,11 @@ function Home() {
         </div>
        
 
-        <div style={{display:'flex',flexDirection:"column", justifyContent:'space-between',}}>
-        <div style={{display:'',color:'black',backgroundColor:'white',}}>
+        <div style={{display:'flex',flexDirection:"column", justifyContent:'space-between', backgroundColor: '#34282C'}}>
+        <div style={{display:'',color:'black',backgroundColor:'#34282C',}}>
           
-          <p style={{fontSize: '22px',fontFamily: 'Georgia' ,textAlign: 'center'}}>Welcome to your library, here you can access the book list, 
-          create an account or login</p>
+          <p style={{fontSize: '22px',fontFamily: 'Montserrat' ,textAlign: 'center', color: "white", }}>WELCOME to your library, here you are able to access the book list, 
+          Sign up or Login</p>
           
           </div>
           <div style={{display:'flex',flexDirection:"row", justifyContent:'space-evenly',

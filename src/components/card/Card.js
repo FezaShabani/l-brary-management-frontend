@@ -3,7 +3,7 @@ import React from 'react'
 import "./card.css"
 function Carte({img, title}) {
   return (
-    <Card className='custom-card'>
+    <Card className='custom-card' style={{backgroundColor: 'whitesmoke'}}>
     <Row align="middle">
       <Col span={6}>
         <img src={img} alt="icon" className='IMG' />

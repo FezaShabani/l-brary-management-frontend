@@ -42,6 +42,7 @@ const tailFormItemLayout = {
 };
 
   const Login = () => {
+    localStorage.setItem('authorize', 'true');
     const navigate = useNavigate();
     let endpoint = "";
     const data = {};
@@ -70,9 +71,15 @@ const tailFormItemLayout = {
         console.log('the data is ',res)
         toast(res?.data?.message, { position: toast.topRight });
         if (userType === "admin"){
+          localStorage.setItem('isAuthorised', true);
+
           navigate('/Admin');
+         
         }
         else if (userType === "student"){
+          localStorage.setItem('isAuthorised', true);
+
+
           navigate(`/student/page/${res.data.id}`);
         }
       })
@@ -87,7 +94,7 @@ const tailFormItemLayout = {
     <Navigation/>
     <ToastContainer position="top-left" />
       <div style={{display:'flex', flexDirection:'column', alignItems:'center',borderWidth:'5px', borderColor:'black'}}>
-      <h2>LOG INTO YOUR ACCOUNT</h2>
+      <h2 style={{fontFamily: "Montserrat"}}>LOG INTO YOUR ACCOUNT</h2>
       <FaUserCircle size={40} />
       </div>
 <div style={{padding:"80px 0", display:"flex", justifyContent:'center'}}>
@@ -148,17 +155,17 @@ const tailFormItemLayout = {
           <Checkbox>Remember me</Checkbox>
         </Form.Item>
 
-        <a className="login-form-forgot" href="">
+        <a className="login-form-forgot" href="" style={{color: "goldenrod"}}>
           Forgot password
         </a>
       </Form.Item>
       
 
       <Form.Item {...tailFormItemLayout}>
-        <Button type="primary" htmlType="submit" className="login-form-button">
+        <Button type="primary" htmlType="submit" className="login-form-button" style={{backgroundColor: "goldenrod"}}>
           Log in
         </Button>
-        Or <a href="/SignUp">Sign Up</a>
+        Or <a href="/SignUp" style={{color: "goldenrod"}}>Sign Up</a>
       </Form.Item>
     </Form>
    

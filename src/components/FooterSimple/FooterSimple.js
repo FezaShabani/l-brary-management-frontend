@@ -7,7 +7,7 @@ function FooterSimple() {
     <div style={{backgroundColor:'#34282C', display:"flex", flexDirection: "row" ,
     justifyContent:'space-between',
     color:'white',maxHeight:"120px", position: 'fixed',
-    bottom: 0, width: '100%',}}>
+    bottom: 0, width: '100%',fontFamily: "Montserrat"}}>
       <div>
         <h5>Library</h5>
       </div>

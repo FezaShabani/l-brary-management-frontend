@@ -36,7 +36,7 @@ function AddBook() {
       <Navigation />
       <div style={{ display: "flex", flexDirection: "column" }}>
         <div>
-          <h4>Add Your Book</h4>
+          <h2 style={{fontFamily: 'Montserrat', textAlign:'justify'}}>ADD YOUR BOOK DETAILS</h2>
         </div>
         <Form
           {...layout}
@@ -94,7 +94,7 @@ function AddBook() {
               offset: 8,
             }}
           >
-            <Button type="primary" htmlType="submit">
+            <Button type="primary" htmlType="submit" style={{backgroundColor: 'goldenrod'}}>
               Submit
             </Button>
           </Form.Item>

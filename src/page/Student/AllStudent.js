@@ -5,7 +5,10 @@ import FooterSimple from "../../components/FooterSimple/FooterSimple";
 import { Table } from "antd";
 import axios from "axios";
 import dayjs from "dayjs";
+import { Input } from 'antd';
+//import { Table, message } from 'antd';
 
+const { Search } = Input;
 function AllStudent() {
   const [myStudent, setMyStudent] = useState([]);
   const [booksMap, setBooksMap] = useState({});
@@ -33,6 +36,27 @@ function AllStudent() {
       render: (books) => books.length,
     },
   ];
+  const onSearch = (value) => {
+    console.log(value);
+  
+      axios
+        .post("http://localhost:8800/student/searchStudents", {name: value})
+        .then((res) => {
+          //message.success("Students retrieved");
+          const list=[]
+          list.push(res?.data)
+          setMyStudent(res.data)
+          console.log("Students found",res.data);
+          //form.resetFields(); 
+        })
+        .catch((e) => {
+          console.error(e);
+          //message.error(
+          //e.response?.data?.message ?? "Could not find student",
+         // );
+        });
+   
+  };
 
   useEffect(() => {
     const fetchStudents = async () => {
@@ -67,10 +91,15 @@ function AllStudent() {
   return (
     <div>
       <Navigation />
-      <div>
+        
         <div>
-          <h1 style={{textAlign: 'center'}}> Students with account</h1>
+          <h1 style={{textAlign: 'center', fontFamily: "Montserrat", backgroundColor: "goldenrod", margin: "0px", color: "white"}}> STUDENTS ACCOUNTS</h1>
         </div>
+
+      <div>
+          <div style={{width:'100%', display:'block', width:'30%',margin:'10px'}}>
+            <Search placeholder="Enter your research" onSearch={onSearch} enterButton />
+          </div>
 
         <Table
           dataSource={myStudent}
@@ -86,17 +115,18 @@ function AllStudent() {
                   columns={[
                     {
                       title: "Book Title",
-                      dataIndex: "isbn",
-                      key: "name",
-                      render: (isbn) => booksMap[isbn]?.title,
+                      dataIndex: "title",
+                      key: "name"
                     },
-                    { title: "ISBN", dataIndex: "isbn", key: "isbn" },
+                   // { title: "ISBN", dataIndex: "isbn", key: "name",
+                   // render: (isbn) => booksMap[isbn]?.title
+                  //},
                     {
                       title: "Taken On",
                       dataIndex: "takenAt",
                       key: "takenAt",
                       render: (takenAt) =>
-                        dayjs(takenAt).format("YYYY-MM-DD h:mm A"),
+                        dayjs(takenAt).format("YYYY-MM-DD "),
                     },
                     {
                       title: "Due On",
@@ -111,6 +141,8 @@ function AllStudent() {
             },
           }}
         />
+      <div/>
+        
       </div>
       <FooterSimple />
     </div>

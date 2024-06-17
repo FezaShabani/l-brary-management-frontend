@@ -6,6 +6,7 @@ import { FaUserCircle } from "react-icons/fa";
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useNavigate } from "react-router";
 
 const formItemLayout = {
   labelCol: {
@@ -39,6 +40,7 @@ const tailFormItemLayout = {
 };
 
 const SignUp = () => {
+  const navigate = useNavigate();
   let endpoint = "";
   const data = {};
   const [form] = Form.useForm();
@@ -47,6 +49,7 @@ const SignUp = () => {
     const { confirmpassword, ...payload } = values;
 
     createNewUser(payload);
+    navigate('/Login');
   };
 
   const createNewUser = async ({ userType, ...body }) => {
@@ -79,9 +82,10 @@ const SignUp = () => {
           alignItems: "center",
           borderWidth: "5px",
           borderColor: "black",
+          backgroundColor: ""
         }}
       >
-        <h2>CREATE YOUR ACCOUNT</h2>
+        <h2 style={{fontFamily: "Montserrat"}}>CREATE YOUR ACCOUNT</h2>
         <FaUserCircle size={40} />
       </div>
       <div
@@ -228,7 +232,7 @@ const SignUp = () => {
           </Form.Item>
 
           <Form.Item {...tailFormItemLayout}>
-            <Button type="primary" htmlType="submit">
+            <Button type="primary" htmlType="submit" style={{backgroundColor: "goldenrod"}}>
               Register
             </Button>
           </Form.Item>

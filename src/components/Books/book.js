@@ -7,6 +7,8 @@ import {
 
 //css stuff
 const formItemLayout = {
+
+
   labelCol: {
     xs: {
       span: 24,
